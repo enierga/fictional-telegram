@@ -2,7 +2,12 @@ import Link from 'next/link';
 
 const Nav = () => (
   <div>
-  // put links to page here!
+    <Link href="/">
+      <a>Home</a>
+    </Link>
+    <Link href="/sell">
+      <a>Sell</a>
+    </Link>
   </div>
 )
 
