@@ -1,6 +1,20 @@
 import Nav from './Nav';
 import Link from 'next/link';
 import styled from 'styled-components';
+import Router from 'next/router';
+import NProgress from 'nprogress';
+
+Router.onRouteChangeStart = () => {
+  NProgress.start();
+};
+
+Router.onRouteChangeComplete = () => {
+  NProgress.done();
+};
+
+Router.onRouteChangeError = () => {
+  NProgress.done();
+};
 
 const Logo = styled.h1`
   font-size: 4rem;
@@ -17,7 +31,7 @@ const Logo = styled.h1`
   }
   @media (max-width: 1300px) {
     margin: 0;
-    text-align: right;
+    text-align: center;
   }
 `;
 
@@ -45,7 +59,7 @@ const Header = () => (
     <div className="bar">
       <Logo>
         <Link href="/">
-          <a>sick fits</a>
+          <a>fake supreme</a>
         </ Link>
       </ Logo>
       <Nav />
